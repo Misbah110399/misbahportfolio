@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misbahuddin Mohammed — AI/ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0C14; --panel:rgba(255,255,255,0.045); --panel-line:rgba(255,255,255,0.09);
+    --ink:#F3F3F7; --ink-soft:#A9ABBE; --ink-faint:#6E7086;
+    --c1:#7C5CFF; --c2:#22D3CE; --c3:#FF5C87;
+    --sans:'Inter',sans-serif; --display:'Space Grotesk',sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0B0C14; --ink:#F3F3F7; --ink-soft:#A9ABBE; --ink-faint:#6E7086; }
+  }
+  :root[data-theme="dark"]{ --bg:#0B0C14; --ink:#F3F3F7; --ink-soft:#A9ABBE; --ink-faint:#6E7086; }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.6;
+    -webkit-font-smoothing:antialiased; position:relative; overflow-x:hidden;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(600px circle at 10% 5%, rgba(124,92,255,0.28), transparent 60%),
+      radial-gradient(700px circle at 90% 20%, rgba(34,211,206,0.18), transparent 60%),
+      radial-gradient(600px circle at 30% 90%, rgba(255,92,135,0.16), transparent 60%);
+  }
+  a{ color:var(--c2); }
+  .wrap{ max-width:900px; margin:0 auto; padding:0 28px; }
+
+  nav.top{ position:sticky; top:0; z-index:10; backdrop-filter:blur(14px); background:rgba(11,12,20,0.55); border-bottom:1px solid var(--panel-line); }
+  .nav-inner{ max-width:900px; margin:0 auto; padding:18px 28px; display:flex; justify-content:space-between; align-items:center; }
+  .nav-inner .brand{ font-family:var(--display); font-weight:700; font-size:0.95rem; }
+  .nav-inner ul{ display:flex; gap:24px; list-style:none; margin:0; padding:0; }
+  .nav-inner a{ color:var(--ink-soft); text-decoration:none; font-size:0.85rem; }
+  .nav-inner a:hover{ color:var(--ink); }
+
+  .hero{ padding:100px 0 70px; }
+  .badge{
+    display:inline-block; font-size:12.5px; padding:6px 14px; border-radius:100px;
+    background:linear-gradient(90deg,var(--c1),var(--c2)); color:#0B0C14; font-weight:600; margin-bottom:26px;
+  }
+  .hero h1{
+    font-family:var(--display); font-weight:700; font-size:clamp(2.4rem,6vw,3.8rem); line-height:1.1; margin:0 0 22px;
+    background:linear-gradient(100deg,#fff 30%,var(--c2) 90%); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p{ font-size:1.1rem; color:var(--ink-soft); max-width:58ch; margin:0 0 30px; }
+  .hero-links{ display:flex; gap:16px; flex-wrap:wrap; }
+  .pill-link{
+    font-size:13.5px; padding:9px 16px; border-radius:100px; border:1px solid var(--panel-line);
+    background:var(--panel); color:var(--ink); text-decoration:none; transition:.15s;
+  }
+  .pill-link:hover{ border-color:var(--c1); color:var(--c1); }
+
+  section{ padding:60px 0; }
+  .sec-title{ display:flex; align-items:center; gap:14px; margin-bottom:34px; }
+  .sec-title .dot{ width:9px; height:9px; border-radius:50%; background:var(--c2); box-shadow:0 0 12px var(--c2); }
+  .sec-title h2{ font-family:var(--display); font-size:1.5rem; font-weight:700; margin:0; }
+
+  .card{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:16px;
+    padding:26px 28px; margin-bottom:18px; backdrop-filter:blur(10px);
+  }
+  .job-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .job-top h3{ font-family:var(--display); font-size:1.1rem; margin:0; }
+  .job-top .org{ background:linear-gradient(90deg,var(--c1),var(--c3)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:700; }
+  .job-top .dates{ font-size:12px; color:var(--ink-faint); }
+  .card ul{ margin:0; padding-left:18px; color:var(--ink-soft); }
+  .card li{ margin-bottom:8px; font-size:0.93rem; }
+
+  .proj-tag{ display:inline-block; font-size:11px; padding:4px 11px; border-radius:100px; margin-bottom:12px; font-weight:600;
+    background:rgba(34,211,206,0.12); color:var(--c2); border:1px solid rgba(34,211,206,0.3); }
+  .card h3.proj-h{ font-family:var(--display); font-size:1.25rem; margin:0 0 10px; }
+  .card p.desc{ color:var(--ink-soft); margin:0 0 16px; font-size:0.93rem; }
+  .stack{ display:flex; flex-wrap:wrap; gap:8px; }
+  .stack span{ font-size:11.5px; padding:4px 10px; border-radius:100px; background:rgba(124,92,255,0.14); color:#B9A6FF; border:1px solid rgba(124,92,255,0.3); }
+
+  .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+  .skill-card h4{ font-family:var(--display); font-size:0.85rem; margin:0 0 10px; color:var(--c2); }
+  .skill-card p{ margin:0; color:var(--ink-soft); font-size:0.88rem; line-height:1.75; }
+
+  .edu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:640px){ .edu-grid{ grid-template-columns:1fr; } }
+  .edu-card .d{ font-size:12px; color:var(--ink-faint); margin-bottom:6px; }
+  .edu-card h4{ margin:0 0 4px; font-family:var(--display); font-size:1rem; }
+  .edu-card p{ margin:0; color:var(--ink-soft); font-size:0.9rem; }
+
+  footer{ padding:40px 0; text-align:center; border-top:1px solid var(--panel-line); }
+  footer p{ color:var(--ink-faint); font-size:0.85rem; }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <span class="brand">MM.</span>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <span class="badge">AI/ML ENGINEER · 4+ YEARS</span>
+    <h1>I build AI-native systems that hold up in production.</h1>
+    <p>From real-time RFID/computer-vision fusion at retail scale to LLM-powered legacy code translation — I turn hard data and infrastructure problems into systems that ship.</p>
+    <div class="hero-links">
+      <a class="pill-link" href="mailto:misbahuddin.1013@gmail.com">misbahuddin.1013@gmail.com</a>
+      <a class="pill-link" href="tel:+13137210022">313-721-0022</a>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-title"><span class="dot"></span><h2>Experience</h2></div>
+
+    <div class="card">
+      <div class="job-top"><div><h3>Python Developer – AI/ML Engineer</h3><span class="org">Walmart</span></div><span class="dates">Sep 2025 — Current</span></div>
+      <ul>
+        <li>Architected an end-to-end real-time RFID data platform for item-level tracking in high-traffic stores.</li>
+        <li>Designed an RFID–Computer Vision fusion engine that cut detection errors in dense store conditions.</li>
+        <li>Engineered a fault-tolerant Kafka ingestion layer handling high-velocity events from distributed readers.</li>
+        <li>Built a real-time tag-to-location tracking service and a Streamlit dashboard for live visibility.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="job-top"><div><h3>Python Developer – AI/ML Engineer</h3><span class="org">Fannie Mae</span></div><span class="dates">Oct 2023 — Aug 2025</span></div>
+      <ul>
+        <li>Directed ingestion of legacy PL/SQL into an AKS-hosted GenAI metadata platform.</li>
+        <li>Engineered an LLM parsing engine (GPT-4, Claude 3) converting PL/SQL to production-ready Python.</li>
+        <li>Built RAG pipelines with LangChain for semantic search across enterprise metadata.</li>
+        <li>Automated acronym/glossary generation for 50+ datasets, ingested into Neo4j.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="job-top"><div><h3>Python Developer</h3><span class="org">Trank Technologies</span></div><span class="dates">Jun 2020 — Nov 2021</span></div>
+      <ul>
+        <li>Built Django web apps and REST APIs for payment and customer portals in production.</li>
+        <li>Created NLP pipelines classifying 10K+ service tickets, improving SLA compliance.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-title"><span class="dot"></span><h2>Projects</h2></div>
+
+    <div class="card">
+      <span class="proj-tag">Currently building</span>
+      <h3 class="proj-h">AI System Architect</h3>
+      <p class="desc">An AI-powered system design platform acting as a principal architect — natural-language requirements become complete system architectures, diagrams, API/database designs, and cost estimates, with a "Challenge My Design" mode that surfaces trade-offs automatically.</p>
+      <div class="stack"><span>System Design</span><span>LLM Reasoning</span><span>Diagrams</span><span>Cost Modeling</span></div>
+    </div>
+
+    <div class="card">
+      <span class="proj-tag">Consulting offering</span>
+      <h3 class="proj-h">K8s Health Checker</h3>
+      <p class="desc">A Kubernetes cluster auditing CLI producing a scored HTML health report across nine checks — resource utilization, availability, security. Productized as a diagnostic for mid-size engineering teams.</p>
+      <div class="stack"><span>Python</span><span>Kubernetes Client</span><span>Jinja2</span></div>
+    </div>
+
+    <div class="card">
+      <span class="proj-tag">Consumer app</span>
+      <h3 class="proj-h">MicroPitch</h3>
+      <p class="desc">An AI-powered mobile app helping entrepreneurs validate business ideas through automated analysis and structured feedback, with subscription billing and full backend infrastructure.</p>
+      <div class="stack"><span>React Native</span><span>Stripe</span><span>Firebase</span></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-title"><span class="dot"></span><h2>Skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-card"><h4>LANGUAGES &amp; FRAMEWORKS</h4><p>Python, Django, Flask, FastAPI, PyTorch, TensorFlow, Scikit-learn</p></div>
+      <div class="skill-card"><h4>GENERATIVE AI &amp; LLMS</h4><p>GPT-4, Claude 3, LangChain, RAG, FAISS, Prompt Engineering</p></div>
+      <div class="skill-card"><h4>COMPUTER VISION</h4><p>YOLOv8, OpenCV, scikit-image, SORT/DeepSORT</p></div>
+      <div class="skill-card"><h4>RFID &amp; IOT</h4><p>EPC Gen2, LLRP, MQTT, RabbitMQ, gRPC</p></div>
+      <div class="skill-card"><h4>CLOUD &amp; MLOPS</h4><p>Azure, AWS, MLflow, Docker, Kubernetes, Jenkins</p></div>
+      <div class="skill-card"><h4>DATA ENGINEERING</h4><p>SQL, PostgreSQL, Neo4j, Spark, Kafka, Redis</p></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-title"><span class="dot"></span><h2>Education</h2></div>
+    <div class="edu-grid">
+      <div class="card edu-card"><p class="d">May 2024</p><h4>MS, Information Systems</h4><p>Trine University</p></div>
+      <div class="card edu-card"><p class="d">Jul 2020</p><h4>BS, Computer Science</h4><p>JNTUH, India</p></div>
+    </div>
+  </section>
+</div>
+
+<footer><p>Misbahuddin Mohammed — AI/ML Engineer</p></footer>
+
+</body>
+</html>
